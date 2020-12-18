@@ -4,7 +4,7 @@
 </ol>
 
 <div class="container">
-    <form>
+    <form #clienteForm= "ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -25,14 +25,14 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Nome: *</label>
-                    <input type="text" [ngModel]="cliente.nome" name="nome" class="form-control">
+                    <input type="text" [(ngModel)]="cliente.nome" name="nome" class="form-control">
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
                     <label>CPF: *</label>
-                    <input type="text" [ngModel]="cliente.cpf" name="cpf" class="form-control">
+                    <input type="text" [(ngModel)]="cliente.cpf" name="cpf" class="form-control">
                 </div>
             </div>
         </div>
