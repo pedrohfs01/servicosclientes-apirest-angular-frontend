@@ -16,4 +16,7 @@ export class ClienteService {
   }
 
 
+  getClientes() : Observable<Cliente[]>{
+    return this.http.get<Cliente[]>(`${environment.api_url}/api/clientes`)
+  }
 }
