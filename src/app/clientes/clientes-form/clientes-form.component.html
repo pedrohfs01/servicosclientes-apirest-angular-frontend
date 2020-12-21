@@ -4,14 +4,14 @@
 </ol>
 
 <div class="container">
-    <form #clienteForm= "ngForm" (ngSubmit)="onSubmit()">
+    <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
 
         <div class="row">
             <div class="col-md-12">
-                <div class="alert alert-success" *ngIf= "success == true">
+                <div class="alert alert-success" *ngIf="success == true">
                     Cliente salvo/atualizado com sucesso!
                 </div>
-                <div class="alert alert-danger" *ngFor = "let erro of errors">
+                <div class="alert alert-danger" *ngFor="let erro of errors">
                     {{erro}}
                 </div>
             </div>
@@ -28,7 +28,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Data cadastro: </label>
-                    <input type="text" [ngModel]="cliente.dataCadastro" name="dataCadastro" class="form-control" disabled>
+                    <input type="text" [ngModel]="cliente.dataCadastro" name="dataCadastro" class="form-control"
+                        disabled>
                 </div>
             </div>
         </div>
@@ -49,10 +50,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2">
-                <button type="submit" class="btn btn-success" >
+            <div class="col-md-3s">
+                <button type="submit" class="btn btn-success">
                     <i class="fa fa-save"></i> Salvar
                 </button>
+                <button type="button" class="btn btn-danger ml-1" (click)="voltarListagem()">
+                    <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+                </button>
+
             </div>
         </div>
     </form>
