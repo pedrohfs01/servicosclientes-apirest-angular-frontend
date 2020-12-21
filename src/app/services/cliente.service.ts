@@ -15,6 +15,10 @@ export class ClienteService {
     return this.http.post<Cliente>(`${environment.api_url}/api/clientes`, cliente);
   }
 
+  atualizar(cliente: Cliente): Observable<Cliente>{
+    return this.http.put<Cliente>(`${environment.api_url}/api/clientes/${cliente.id}`, cliente);
+  }
+
 
   getClientes() : Observable<Cliente[]>{
     return this.http.get<Cliente[]>(`${environment.api_url}/api/clientes`)
