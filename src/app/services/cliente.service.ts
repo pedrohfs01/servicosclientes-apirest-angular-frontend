@@ -19,6 +19,10 @@ export class ClienteService {
     return this.http.put<Cliente>(`${environment.api_url}/api/clientes/${cliente.id}`, cliente);
   }
 
+  deletar(cliente: Cliente): Observable<any>{
+    return this.http.delete<any>(`${environment.api_url}/api/clientes/${cliente.id}`);
+  }
+
 
   getClientes() : Observable<Cliente[]>{
     return this.http.get<Cliente[]>(`${environment.api_url}/api/clientes`)
