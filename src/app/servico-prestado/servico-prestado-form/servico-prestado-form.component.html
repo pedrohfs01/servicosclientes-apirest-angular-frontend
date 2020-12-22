@@ -4,15 +4,15 @@
     <li class="breadcrum-bitem active">Novo</li>
 </ol>
 <div class="container">
-    <form #form="ngForm" (submit)="onSubmit()" >
+    <form #form="ngForm" (submit)="onSubmit()">
 
         <div class="row">
             <div class="col-md-12">
                 <div class="alert alert-success" role="alert" *ngIf="success == true">
-                    Serviço Prestado salvo com sucesso!    
+                    Serviço Prestado salvo com sucesso!
                 </div>
                 <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
-                    {{ erro  }}    
+                    {{ erro }}
                 </div>
             </div>
         </div>
@@ -61,6 +61,10 @@
                 <button type="submit" class="btn btn-success">
                     <i class="fa fa-save"></i>
                     Salvar</button>
+
+                <button type="button" class="btn btn-danger ml-1" (click)="voltarListagem()">
+                    <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+                </button>
             </div>
         </div>
     </form>

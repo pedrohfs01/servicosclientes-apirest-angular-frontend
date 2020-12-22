@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cliente } from 'src/app/clientes/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { ServicoPrestadoService } from 'src/app/services/servico-prestado.service';
@@ -19,7 +20,8 @@ export class ServicoPrestadoFormComponent implements OnInit {
   errors: string[];
 
   constructor(private clienteService: ClienteService,
-    private service: ServicoPrestadoService) {
+    private service: ServicoPrestadoService,
+    private router: Router) {
     this.servico = new ServicoPrestado();
   }
 
@@ -38,5 +40,9 @@ export class ServicoPrestadoFormComponent implements OnInit {
         this.success = false;
         this.errors = errorResponse.error.errors;
       });
+  }
+
+  voltarListagem() {
+    this.router.navigate(["/servico-prestado-listagem"])
   }
 }
