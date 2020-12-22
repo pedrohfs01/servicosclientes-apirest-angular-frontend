@@ -10,11 +10,11 @@ import { ServicoPrestado } from '../servico-prestado';
 })
 export class ServicoPrestadoFormComponent implements OnInit {
 
-  clientes: Cliente[] = [];
+  public clientes: Cliente[] = [];
 
   public servico: ServicoPrestado;
 
-  constructor(private clienteService: ClienteService) { 
+  constructor(public clienteService: ClienteService) { 
     this.servico = new ServicoPrestado();
   }
 
