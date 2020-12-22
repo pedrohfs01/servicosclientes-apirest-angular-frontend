@@ -11,32 +11,32 @@ import { ServicoPrestado } from '../servico-prestado';
 })
 export class ServicoPrestadoFormComponent implements OnInit {
 
-  public clientes: Cliente[] = [];
+  clientes: Cliente[] = [];
 
-  public servico: ServicoPrestado;
+  servico: ServicoPrestado;
 
   success: boolean = false;
   errors: string[];
 
-  constructor(public clienteService: ClienteService,
-    public service: ServicoPrestadoService) { 
+  constructor(private clienteService: ClienteService,
+    private service: ServicoPrestadoService) {
     this.servico = new ServicoPrestado();
   }
 
   ngOnInit(): void {
     this.clienteService.getClientes().subscribe(response => this.clientes = response);
-    
+
   }
 
-  onSubmit(){
+  onSubmit() {
     this.service.salvar(this.servico)
       .subscribe(response => {
         this.success = true;
-        this.errors = []; 
+        this.errors = [];
         this.servico = new ServicoPrestado();
-      }, errorResponse =>{
+      }, errorResponse => {
         this.success = false;
         this.errors = errorResponse.error.errors;
-      });    
+      });
   }
 }

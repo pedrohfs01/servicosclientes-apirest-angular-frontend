@@ -1,7 +1,7 @@
 export class ServicoPrestado{
 
-    private descricao: string;
-    private data: string;
-    private preco: string;
-    private idCliente: number;
+    public descricao: string;
+    public data: string;
+    public preco: string;
+    public idCliente: number;
 }

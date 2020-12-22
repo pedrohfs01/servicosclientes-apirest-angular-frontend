@@ -4,15 +4,15 @@
     <li class="breadcrum-bitem active">Novo</li>
 </ol>
 <div class="container">
-    <form #form="ngForm" (submit)="onSubmit()">
+    <form #form="ngForm" (submit)="onSubmit()" >
 
         <div class="row">
             <div class="col-md-12">
-                <div class="alert alert-success" *ngIf="success == true">
-                    Serviço Prestado salvo com sucesso!
+                <div class="alert alert-success" role="alert" *ngIf="success == true">
+                    Serviço Prestado salvo com sucesso!    
                 </div>
-                <div class="alert alert-danger" *ngFor="let erro of errors">
-                    {{erro}}
+                <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+                    {{ erro  }}    
                 </div>
             </div>
         </div>
