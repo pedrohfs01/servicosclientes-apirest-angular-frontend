@@ -13,6 +13,6 @@ export class ServicoPrestadoService {
     }
 
     salvar(servicoPrestado: ServicoPrestado): Observable<ServicoPrestado>{
-        return this.http.post<ServicoPrestado>(`${environment.api_url}/servicos-prestados`, servicoPrestado);
+        return this.http.post<ServicoPrestado>(`${environment.api_url}/api/servicos-prestados`, servicoPrestado);
     }
 }
