@@ -19,7 +19,8 @@ export class ServicoPrestadoService {
 
     buscar(nome: string, mes: number): Observable<ServicoPrestadoBusca[]>{
 
-        const params = new HttpParams().set("nome", nome).set("mes", mes.toString());
+        const params = new HttpParams().set("nome", nome)
+        .set("mes", mes ? mes.toString() : '');
 
         return this.http.get<ServicoPrestadoBusca[]>(`${environment.api_url}/api/servicos-prestados?${params.toString()}`);
     }
