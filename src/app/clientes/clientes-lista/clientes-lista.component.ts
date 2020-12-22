@@ -26,7 +26,7 @@ export class ClientesListaComponent implements OnInit {
   }
 
   novo(){
-    this.router.navigate(["/clientes-form"]);
+    this.router.navigate(["/clientes/form"]);
   }
 
   preparaDelecao(cliente: Cliente){
