@@ -13,7 +13,7 @@ export class LoginComponent {
   username: string;
   password: string;
 
-  loginError: boolean;
+  errors: string[];
   cadastrando: boolean;
 
   msgSuccess: string;
@@ -43,10 +43,13 @@ export class LoginComponent {
     this.authService.salvar(usuario)
                     .subscribe(response => {
                       this.msgSuccess = "Cadastrado com sucesso."
-                      this.loginError = false;
-                    }, error => {
+                      this.cancelaCadastro();
+                      this.errors = [];
+                      this.username = null;
+                      this.password = null;
+                    }, errorResponse => {
                       this.msgSuccess = null;
-                      this.loginError = true;
+                      this.errors = errorResponse.error.errors;
                     })
   }
 }
