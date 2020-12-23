@@ -11,6 +11,10 @@
                                 </h3>
                             </div>
                             <div class="card-body">
+                                <div class="alert alert-success" *ngIf="msgSuccess">
+                                    Cadastrado com sucesso.
+                                </div>
+
                                 <div class="alert alert-danger" *ngIf="loginError">
                                     Login e/ou senha incorreto(a).
                                 </div>
@@ -31,7 +35,7 @@
                                         <button type="submit" class="btn btn-primary" *ngIf="!cadastrando">
                                             Entrar
                                         </button>
-                                        <button type="submit" class="btn btn-success" *ngIf="cadastrando">
+                                        <button type="button" class="btn btn-success" *ngIf="cadastrando" (click)="cadastrar()">
                                             Cadastrar
                                         </button>
                                         <button type="button" class="btn btn-danger ml-1" (click)="cancelaCadastro()" *ngIf="cadastrando">
